@@ -1,7 +1,7 @@
 const chai = require('chai');
 const assert = chai.assert;
 
-const wordSearch = require('../wordsearch.js')
+const wordSearch = require('../wordsearch.js');
 
 describe("#wordSearch()", function() {
   it("should return false if the word is not present", function() {
@@ -15,7 +15,7 @@ describe("#wordSearch()", function() {
       ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
       ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
       ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
-    ], 'FRANK')
+    ], 'FRANK');
 
     assert.isFalse(result);
   });
@@ -31,8 +31,25 @@ describe("#wordSearch()", function() {
       ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
       ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
       ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
-    ], 'SEINFELD')
+    ], 'SEINFELD');
 
     assert.isTrue(result);
   });
+
+  it("should return true if the word is present", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['C', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
+      ['I', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['V', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['I', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['C', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'CIVIC');
+
+    assert.isTrue(result);
+  });
+
 });
